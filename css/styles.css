@@ -1,62 +1,52 @@
-/*
-HINT
-For CSS stuff, make good use of the Chrome Developer Tools:
--- on the demo page, open up the inspector and poke around.
--- on your own page, use dev tools to add and modify styles directly in the browser.
-*/
-
-
-/*
-TODO 4
-add a selector for elements with class "item-watchlist"
-give these elements a display property of inline-block
-and then style them as shown in the example (padding, margin, background, etc)
-*/
-
-
-/*
-TODO 5 
-Make all elements have color: gray; by default
-Hint: just apply the style using a parent selector, and then all 
-descendent elements will automatically inherit the same styles
-*/
-
-
-#big-header {
-	background: gray;
-	color: white;
-	text-align: center;
+/**
+ * styles.css
+ *
+ * Computer Science 50
+ * Problem Set 7
+ *
+ * Global CSS.
+ */
+ 
+body{
+    color: gray;
 }
 
-#section-browse {
-	background: #eee;	
-}
-
-#section-browse li {
-	margin-bottom: 40px;
-	list-style: none;
-}
-
-section header {
-	margin-bottom: 40px;
-}
-
-section, #big-header {
-	padding: 20px;
-}
-
-ul {
-	padding-left: 0px;
-}
-
-button, input[type="submit"] {
-	border-width: 0px;
-	/*
-	TODO 7
-	give these buttons some padding, and color them orange with white text
-	*/
+button, input[type="submit"]{
+    height: 30px;
+    width: 200px;
+    border-radius: 4px;
+    border: 1px solid #100;
+    color:white;
+    background-color:orange;
+    
 }
 
 button:disabled {
-	opacity: 0.5;
+  opacity: 0.2;
 }
+.item-watchlist {
+    color: white;
+    display: inline-block;
+    padding: 50px;
+    border: 1px;
+    background-color:orange;
+    margin-top:    2px;
+    margin-right:  2px;
+    margin-bottom: 2px;
+    margin-left:   2px
+    text-align: auto;
+    width:auto
+    
+}
+.style{
+    background: gray;
+}
+#form-search{
+    
+}
+#big-header{
+    background: gray;
+    color: white;
+    text-align: center;
+}
+

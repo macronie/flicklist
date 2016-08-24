@@ -5,10 +5,12 @@
 
   <script src="https://code.jquery.com/jquery-2.2.3.js"></script>  
   <link rel="stylesheet" href="css/styles.css"/>
-
+ 
   <title>FlickList</title>
+
 </head>
 <body>
+ 
 
   <header id="big-header">
     <h1>FlickList</h1>
@@ -23,7 +25,7 @@
 
     <ul></ul>
   </section>
-
+ 
   <section id="section-browse">
     <header>
       <h2>Browse Movies</h2>
@@ -31,6 +33,11 @@
       TODO 6
       add a <form> here for users to search for movies by title 
       -->
+      <form id = "form-search">
+        <input type="text" name="query"/>
+        <input type="submit" value="Search by Title"/>
+        
+      </form>
 
     </header>
 
@@ -43,19 +50,22 @@
     // TODO 8
     // fill in the missing pieces of the code below
 
-    $("TODO 8a").submit(function(evt) {
+    $("#form-search").submit(function(event) {
 
       // first, we cancel the default action (which would leave the page)
-      evt.preventDefault();
+      event.preventDefault();
 
       // figure out what the user typed
-      var searchTerm = $("TODO 8b").val();
+      var searchTerm = $("#form-search input[type='text']").val();
 
       // TODO 8c invoke the searchMovies function,
       // passing in the search term, and render as the callback
+      searchMovies(searchTerm, render);
 
     });
   </script>
+  
+ 
 
 </body> 
 </html>
