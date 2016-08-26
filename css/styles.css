@@ -1,82 +1,75 @@
-
-
-/*
-TODO 2c
-Customize the .jumbotron class to have centered text instead of left-aligned
-Also change its bottom margin to 1%
-*/
-
-
-/*
-TODO 2h
-Give the Watchlist items some styles:
-- a fixed width of 160px
-- a little bit of margin on the bottom and right edges
-- no padding
-*/
-
-
-/*
-TODO 2j
-The "I watched it" button should fill the entire width of its container, 
-and should be 10px below the neighbor element above it
-*/
-
-
-/*
-TODO 3c
-Apply text-align: center; to the watchlist
-*/
-
-
-
-.main-content {
-	color: gray;
-}
-
-#section-browse {
-	background: black;	
-}
-
-#section-browse form {
-	margin-bottom: 2%;
-}
-
-hr {
-	border-color: rgba(128,128,128,0.2);
-}
-
-section header {
-	margin-bottom: 10px;
-}
-
-section {
-	padding: 2%;
+/**
+ * styles.css
+ *
+ * Computer Science 50
+ * Problem Set 7
+ *
+ * Global CSS.
+ */
+ 
+body{
+    color: gray;
 }
 
 
-/*
-TODO 5
-Delete everything else below! 
-The Bootstrap classes have made this stuff no longer relevant
-*/
-
-ul {
-	padding-left: 0px;
+.item-watchlist {
+    color: black;
+    display: inline-block;
+    padding: 50px;
+    border: 1px;
+    margin-top:    2px;
+    margin-right:  2px;
+    margin-bottom: 2px;
+    margin-left:   2px;
+    text-align: left;
+    width:auto
+    
 }
 
-button:disabled {
-	opacity: 0.5;
+.style{
+    
+    background: gray;
 }
 
-button, input[type="submit"] {
-	padding: 10px;
-	background: orange;
-	border-width: 0px;
-	color: white;
+#form-search{
+    
 }
 
-#section-browse li {
-	margin-bottom: 40px;
-	list-style: none;
+#big-header{
+    background: gray;
+    color: white;
+    text-align: center;
 }
+
+.jumbotron{
+   text-align: center; 
+   margin-bottom: 1%;
+}
+
+#section-watchlist li{
+    background: white;
+    padding: 0px;
+    margin: 0px 1% 1% 0px;
+    width: 160px;
+
+}
+
+#section-watchlist ul li button{
+    width: 100%;
+    margin-top: 10px;
+}
+
+#section-watchlist ul {
+    text-align: center;
+}
+
+.panel {
+    
+    
+}
+
+#section-browselist{
+    background: black;
+
+}
+
