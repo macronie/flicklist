@@ -97,7 +97,7 @@
   <script src="js/flicklist.js"></script>
   <script>
     $("#form-search").submit(function(evt) {
-      evt.preventDefault();
+      evt.preventDefault(); //Prevent a submit button from submitting a form
       var query = $("#form-search input[name=query]").val();
       searchMovies(query, render);
     });

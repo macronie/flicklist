@@ -38,7 +38,7 @@ function discoverMovies(callback) {
     success: function(response) {
       model.browseItems = response.results;
       callback(response);
-      console.log(response);
+      //console.log(response);
     }
   });
 }
