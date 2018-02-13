@@ -8,7 +8,7 @@ var model = {
 
 var api = {
   root: "https://api.themoviedb.org/3",
-  token: "TODO" // TODO 0 put your api key here
+  token: "d1532779d6138424947cc04f8708c298" // TODO 0 put your api key here
 }
 
 
@@ -23,13 +23,14 @@ function discoverMovies(callback) {
 		data: {
 			api_key: api.token,
 		},
-		success: function(response) {
+			success: function(response) {
 			console.log("We got a response from The Movie DB!");
 			console.log(response);
 			
 			// TODO 2
 			// update the model, setting its .browseItems property equal to the movies we recieved in the response
-			
+			model.browseItems = response.results;
+			//console.log(movies);
 			// invoke the callback function that was passed in. 
 			callback();
 		}
@@ -44,21 +45,40 @@ function discoverMovies(callback) {
 function render() {
   // TODO 7
   // clear everything from both lists
-  
+  $( "#section-watchlist ul" ).empty();
+  	
+  $( "#section-browse ul" ).empty();
   // TODO 6
   // for each movie on the user's watchlist, insert a list item into the <ul> in the watchlist section
-  
+  model.watchlistItems.forEach(function(movie) {
+		
+		$("#section-watchlist ul").append("<br><li>" + movie + "</li><br>");
+		
+  });
   // for each movie on the current browse list, 
   model.browseItems.forEach(function(movie) {
 		// TODO 3
 		// insert a list item into the <ul> in the browse section
+		$('#section-browse ul').append( '<li>' + movie.title + '</li>' );
 		
 		// TODO 4
 		// the list item should include a button that says "Add to Watchlist"
-		
+		//addButton = $('<button/>').text('Add to Watchlist');
+		//addButton = $('<button type= "button" id = >Another button</button>');
+		//$("#section-browse ul").append(addButton);
+		//var r= $('<input/>').attr({ type: 'button', id:movie.title, name:'Add to Watchlist'});
+		$("#section-browse ul").append("<button id ="+ movie.title+"type='button'>Add to Watchlist</button><br>");  
+		//$("#section-browse ul").append(r);  
+	  });
 		// TODO 5
 		// when the button is clicked, this movie should be added to the model's watchlist and render() should be called again
-  });
+		$("button").click(function(){
+			console.log("You clicked the button!");
+			console.log(this.id);
+			model.watchlistItems.push(this.id);
+			render();
+		});
+  
   
 }
 
