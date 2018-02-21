@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="css/styles.css"/>
 
   <title>FlickList</title>
-</head>
+</head>/
 <body>
 
   <header id="big-header">
@@ -28,9 +28,13 @@
     <header>
       <h2>Browse Movies</h2>
       <!-- 
-      TODO 6
+      TODO 6 - Done
       add a <form> here for users to search for movies by title 
       -->
+      <form id="movie-search">
+        <input type="text" name="movie-name">
+        <input type="submit" value = "Search by Title">
+      </form>
 
     </header>
 
@@ -43,13 +47,14 @@
     // TODO 8
     // fill in the missing pieces of the code below
 
-    $("TODO 8a").submit(function(evt) {
+    $("#movie-search").submit(function(evt) {
 
       // first, we cancel the default action (which would leave the page)
       evt.preventDefault();
 
       // figure out what the user typed
-      var searchTerm = $("TODO 8b").val();
+      var searchTerm = $("#movie-search input[name=movie-name]").val();
+      searchMovies(searchTerm, render);
 
       // TODO 8c invoke the searchMovies function,
       // passing in the search term, and render as the callback
